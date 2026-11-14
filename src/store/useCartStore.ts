@@ -29,6 +29,7 @@ interface CartState {
   getTotalCount: () => number;
 }
 
+// Create a Zustand store for managing the shopping cart state
 export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
@@ -36,7 +37,7 @@ export const useCartStore = create<CartState>()(
       wishlistIds: [],
       isDrawerOpen: false,
 
-      openDrawer: () => set({ isDrawerOpen: true }),
+      openDrawer: () => set({ isDrawerOpen: true }), // Open the shopping cart drawer
       closeDrawer: () => set({ isDrawerOpen: false }),
 
       addItem: (incoming, qty = 1) => {

@@ -236,7 +236,7 @@ async function main() {
 
   for (const item of products) {
     const { images, ...productData } = item;
-    await prisma.product.upsert({
+    await prisma.product.upsert({ // Upsert product with associated images
       where: { slug: productData.slug },
       update: {
         images: {
